@@ -1,0 +1,136 @@
+body {
+  font-family: Source Sans Pro;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  margin: 16px;
+}
+
+ul {
+  padding: 0
+}
+
+[draggable] {
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    /* Required to make elements draggable in old WebKit */
+    -khtml-user-drag: element;
+    -webkit-user-drag: element;
+  }
+  
+  #columns {
+    list-style-type: none;
+  }
+  
+  li {
+    width: 262px;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+
+    cursor: move;
+  }
+
+  li.column {
+
+    height: 1.5rem;
+    width: 350px;
+    color: #36394D;
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #CACCD6;
+    border-radius: 2px;
+    transition: border-color 150ms ease-in-out,outline-color 150ms ease-in-out;
+  }
+
+  li.column:hover {
+    border: 1px solid #36394D;
+  }
+
+  li.column::before {
+    content: '.. .. .. .. ..';
+    width: 10px;
+  height: 1.5rem;
+  display: inline-block;
+  overflow: hidden;
+  line-height: 5px;
+  padding: 3px 4px;
+  cursor: move;
+  vertical-align: middle;
+  margin-top: -.7em;
+  margin-right: 10px;
+  font-size: 12px;
+  font-family: sans-serif;
+  letter-spacing: 2px;
+  color: #CACCD6;
+  text-shadow: 1px 0 1px black;
+  }
+
+  li.column:hover:before {
+    color: #36394D;
+  }
+  
+  .column.dragElem {
+    opacity: 0.4;
+  }
+
+li.invisible {
+border: 2px solid transparent;
+background-color: transparent;
+color: transparent;
+cursor: default;
+user-select: none;
+}
+
+li.invisible::before {
+  display:none
+}
+
+li.invisible:hover {
+  border: 0
+}
+
+  .over::after {
+    content: "";
+    display: inline-block;
+    width: 350px;
+    height: 0px;
+    z-index: 2;
+    position: relative;
+    top: -57px;
+    border-top: 6px solid #CACCD6;
+    opacity: .5;
+  }
+
+  #list {
+    float: left;
+    padding-left: 3rem;
+  }
+  #instructions {
+    padding: 1rem 3rem;
+    overflow: auto;
+  }
+
+  #header {
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+    display: block;
+    margin: 0 0 1.5rem;
+  }
+
+  #answer {
+    background-color: #F2F3F5;
+    border-color: #CACCD6;
+    color: #379A49;
+    margin: 32px 0 0;
+    padding: 24px;
+    border-width: 1px;
+    border-radius: 2px;
+    border-style: solid;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+    visibility: hidden;
+  }
