@@ -1,26 +1,31 @@
 var dragSrcEl = null;
 
 var answers = [
-    "Make a shot with correct dose and yield",
-    "Check the shot time and taste the coffee",
-    "Adjust the grind size accordingly",
-    "Purge the grinder",
-    "Repeat until the shot time and taste is correct",
-    "Check the dose given by the grinder",
-    "Adjust the grind time accordingly",
-    "Repeat until the dose is correct"
+    "Remove portafilter from group",
+    "Flush the group",
+       "Knock out old coffee and wipe the basket",
+       "Dose the correct amount of coffee",
+       "Distribute coffee evenly",
+       "Tamp consistently and level",
+       "Wipe the rim and ears of the portafilter",
+       "Insert the portafilter and immediately brew",
+       "Watch the flow and stop the pump",
+       "Clean the portafilter and return it to the group"
 ];
-var random = [6,
-    0,
-    5,
-    1,
-    7,
+
+var random = [
+    6,
     2,
+    5,
+    8,
+    7,
+    0,
     4,
     3,
-    10,
     9,
-    11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+    1,
+    10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+];
 
 addAnswers();
 setDnDHandlers();
@@ -202,6 +207,7 @@ function checkanswer() {
 
 function closeModal(){
     document.getElementById("startoverlay").style.display = "none";
+    document.getElementById("infomodal").style.display="block";
     document.getElementById("infomodal").classList.add("modalflash");
     setTimeout(function(){
         document.getElementById("infomodal").style.display = "none";
